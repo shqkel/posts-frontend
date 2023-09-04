@@ -11,11 +11,11 @@ const Layout = () => {
     <>
       <Navbar collapseOnSelect expand="md" className='mb-3' bg="primary" data-bs-theme="dark" onClick={onLinkClick}>
         <Container>
-          <Navbar.Brand href="/" data-to="/">리액트</Navbar.Brand>
+          <Navbar.Brand href="/">리액트</Navbar.Brand>
           <Navbar.Toggle />
           <Navbar.Collapse >
             <Nav className="me-auto">
-              <Nav.Link href="/" data-to="/" >Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/posts">Posts</Nav.Link>
               {
                 (isLogin && hasRole('ADMIN')) &&
@@ -25,7 +25,7 @@ const Layout = () => {
             {
               isLogin ? (
                 <Nav>
-                  <Nav.Link href="/mypage">
+                  <Nav.Link href="/auth/mypage">
                     <Button variant="outline-light" title={loginMember.sub}>마이페이지</Button>
                   </Nav.Link>
                   <Nav.Link>
@@ -34,10 +34,10 @@ const Layout = () => {
                 </Nav> 
               ) : ( 
                 <Nav>
-                  <Nav.Link href="/login">
+                  <Nav.Link href="/auth/login">
                     <Button variant="outline-light">Login</Button>
                   </Nav.Link>
-                  <Nav.Link href="/join" >
+                  <Nav.Link href="/auth/join" >
                     <Button variant="outline-light">Join</Button>
                   </Nav.Link>
                 </Nav>

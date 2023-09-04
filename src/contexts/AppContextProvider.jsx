@@ -69,7 +69,7 @@ const handleRefreshTokenFailure = (err) => {
   sessionStorage.removeItem("loginMember"); 
   sessionStorage.removeItem("accessToken"); 
   sessionStorage.removeItem("removeToken"); 
-  window.location.href = "/login";
+  window.location.href = "/auth/login";
 }
 
 const setAuthenticaionToStorage = ({accessToken, refreshToken}) => {
@@ -144,12 +144,10 @@ const AppContextProvider = (props) => {
     return authorities.some((authority) => authority === `ROLE_${roleName}`)
   }
 
-  
+  const getMyPage =  async () => {
+    return await api.get(`/auth/${loginMember.username}`).then(response => response.data);
+  }
 
-  const getForPost = async () => {
-    return await api.get(`/post`)
-                      .then(response => response.data);
-  };
   const getForAdmin = async () => {
     return await api.get(`/admin`).then(response => response.data);
   }
@@ -162,8 +160,8 @@ const AppContextProvider = (props) => {
       onLinkClick,
       login, 
       logout, 
-      hasRole, 
-      getForPost, 
+      hasRole,
+      getMyPage, 
       getForAdmin
     }
   };

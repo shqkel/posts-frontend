@@ -10,6 +10,7 @@ import PageNotFound from './routes/PageNotFound';
 import Login from './routes/auth/Login';
 import Join from './routes/auth/Join';
 import AuthRoute from './routes/AuthRoute';
+import MyPage from './routes/auth/MyPage';
 
 function App() {
   return (
@@ -22,8 +23,9 @@ function App() {
           <Route path="/posts/create" element={<AuthRoute><PostCreate/></AuthRoute>}/>
           <Route path="/posts/detail/:id" element={<PostDetail/>}/>
           <Route path="/posts/update/:id" element={<AuthRoute><PostUpdate/></AuthRoute>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/join" element={<Join/>}/>
+          <Route path="/auth/login" element={<Login/>}/>
+          <Route path="/auth/join" element={<Join/>}/>
+          <Route path="/auth/mypage" element={<MyPage/>}/>
           <Route path="*" element={<PageNotFound/>}/>
         </Route>
       </Routes>

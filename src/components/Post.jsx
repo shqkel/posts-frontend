@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { formatDate } from '../utils/Utils'
+import { formatDateTime } from '../utils/Utils'
 
 const Post = ({post}) => {
   return (
@@ -12,7 +12,7 @@ const Post = ({post}) => {
         </Link>
       </td>
       <td>{post.writer}</td>
-      <td>{formatDate(post.createdAt)}</td>
+      <td>{formatDateTime(post.createdAt)}</td>
     </tr> 
   )
 }

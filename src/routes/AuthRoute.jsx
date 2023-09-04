@@ -12,7 +12,7 @@ const AuthRoute = (props) => {
               <Alert variant='danger' className='text-center'>
                 로그인후 사용가능합니다. 👩‍🦰
                 <br />
-                <Alert.Link href="/login" onClick={onLinkClick}>로그인</Alert.Link>
+                <Alert.Link href="/auth/login" onClick={onLinkClick}>로그인</Alert.Link>
               </Alert>
         }
       </React.Fragment>

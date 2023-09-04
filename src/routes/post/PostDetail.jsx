@@ -4,7 +4,7 @@ import { PostContext } from '../../contexts/PostContextProvider';
 import { Card, Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Badge } from 'react-bootstrap';
-import { formatDate } from '../../utils/Utils';
+import { formatDateTime } from '../../utils/Utils';
 import { Button } from 'react-bootstrap';
 import { AppContext } from '../../contexts/AppContextProvider';
 
@@ -81,7 +81,7 @@ const PostDetail = () => {
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer className="text-muted">
-                  Created on {formatDate(createdAt)} by {writer}
+                  Created on {formatDateTime(createdAt)} by {writer}
                 </Card.Footer>
               </Card>
             </Col>
